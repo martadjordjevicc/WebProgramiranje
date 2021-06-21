@@ -11,6 +11,13 @@ fetch("https://localhost:5001/LetnjiBar/PreuzmiBarove").then(p => {
             const bar1 = new LetnjiBar(bar.idBara, bar.naziv, bar.adresa, bar.kapacitet);
             bar1.crtajBar(document.body);
             console.log(bar.idBara);
+            
+             bar.lezaljke.forEach(s=>{
+                var lez= bar1.lezaljke[s.brojLezaljke];
+                var por= bar1.porudzbine[s.brojLezaljke];
+                
+                   lez.zauzmiLezaljku(s.brojLezaljke);
+                   lez.naruci(s.brojLezaljke, por);
 
             
         });
